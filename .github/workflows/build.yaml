@@ -23,4 +23,4 @@ jobs:
         run: g++ -o fibonacci fibonacchi.c  # Compile the `fibonacchi.c` program to an executable named `fibonacchi`
 
       - name: Run the C program
-        run: ./todo  # Run the compiled program
+        run: ./fibonacchi  # Run the compiled program
