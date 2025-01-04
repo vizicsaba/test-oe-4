@@ -1,26 +1,31 @@
-name: Todo app build
+name: Fibonacci C++ Build and Test
 
 on:
   push:
     branches:
-      - main  # Trigger the workflow on push to the `main` branch
+      - main
   pull_request:
     branches:
-      - main  # Trigger the workflow on pull requests to the `main` branch
-      
+      - main
+
 jobs:
   build:
-    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4  # Check out the code from the repository
+        uses: actions/checkout@v4
 
-      - name: Set up C environment
-        run: sudo apt-get update && sudo apt-get install -y build-essential  # Install build tools like GCC
+      - name: Set up C++ environment
+        run: sudo apt-get update && sudo apt-get install -y build-essential
 
-      - name: Compile C code
-        run: g++ -o fibonacchi fibonacchi.c  # Compile the `fibonacchi.c` program to an executable named `fibonacchi`
+      - name: Compile Fibonacci code
+        run: g++ -o fibonacci fibonacci.cpp
 
-      - name: Run the C program
-        run: ./fibonacchi  # Run the compiled program
+      - name: Run Fibonacci program
+        run: ./fibonacci
+
+      - name: Compile and Run Unit Tests
+        run: |
+          g++ -o fibonacci_test fibonacci.cpp fibonacci_test.cpp
+          ./fibonacci_test
