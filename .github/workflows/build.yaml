@@ -20,7 +20,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y build-essential  # Install build tools like GCC
 
       - name: Compile C code
-        run: g++ -o fibonacci fibonacci.c  # Compile the `fibonacci.c` program to an executable named `fibonacci`
+        run: g++ -o fibonacci fibonacchi.c  # Compile the `fibonacchi.c` program to an executable named `fibonacchi`
 
       - name: Run the C program
         run: ./todo  # Run the compiled program
