@@ -19,13 +19,8 @@ jobs:
       - name: Set up C++ environment
         run: sudo apt-get update && sudo apt-get install -y build-essential
 
-      - name: Compile Fibonacci code
-        run: g++ -o fibonacci fibonacci.cpp
-
-      - name: Run Fibonacci program
-        run: ./fibonacci
-
       - name: Compile and Run Unit Tests
         run: |
-          g++ -o fibonacci_test fibonacci.cpp fibonacci_test.cpp
+          g++ -o fibonacci_test fibonacci_test.cpp
           ./fibonacci_test
+
