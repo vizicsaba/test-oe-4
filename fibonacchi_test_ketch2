@@ -1,0 +1,29 @@
+#define CATCH_CONFIG_MAIN
+#include "catch2/catch.hpp"
+#include <stdexcept>
+
+int fibonacci(int n);
+
+TEST_CASE("Fibonacci function tests") {
+    
+    SECTION("Base cases") {
+        REQUIRE(fibonacci(0) == 0);
+        REQUIRE(fibonacci(1) == 1);
+    }
+    
+    SECTION("Small numbers") {
+        REQUIRE(fibonacci(2) == 1);
+        REQUIRE(fibonacci(3) == 2);
+        REQUIRE(fibonacci(4) == 3);
+        REQUIRE(fibonacci(5) == 5);
+    }
+    
+    SECTION("Larger numbers") {
+        REQUIRE(fibonacci(10) == 55);
+        REQUIRE(fibonacci(15) == 610);
+    }
+    
+    SECTION("Invalid input") {
+        REQUIRE_THROWS_AS(fibonacci(-1), std::invalid_argument);
+    }
+}
