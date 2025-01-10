@@ -1,4 +1,4 @@
-name: C++ Build and Test
+name: C++ Fibonacci Test with Catch2
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
         run: |
           mkdir build
           cd build
-          g++ -std=c++17 -o test ../fibonacci.cpp ../test_fibonacci.cpp
+          g++ -std=c++17 -o test ../fibonacchi_test_ketch2.cpp
 
       - name: Run tests
         run: |
